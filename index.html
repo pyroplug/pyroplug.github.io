@@ -9,43 +9,52 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
     <style>
         body {
-            font-family: 'Open sans', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0;
+            background-color: #121212;
+            color: #e0e0e0;
             margin: 0;
+            overflow: hidden;
         }
         
         .container {
             text-align: center;
-            background: white;
+            background: #1e1e1e;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            /* Adjust this value to make the page wider */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
             width: 100%;
+            z-index: 1;
         }
         
-        .container h1 {
-            margin-bottom: 20px;
+        .container h1,
+        .container h2 {
+            color: #e0e0e0;
         }
         
         .link {
             display: block;
             margin: 10px 0;
             padding: 10px;
-            background: #007bff;
+            background: #8b0000;
+            /* Darker red */
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            transition: background 0.3s;
+            font-weight: bold;
+            /* Make the text thicker */
+            transition: background 0.3s, color 0.3s, transform 0.3s;
         }
         
         .link:hover {
-            background: #0056b3;
+            background: #ff0000;
+            /* Bright red */
+            color: black;
+            transform: scale(1.05);
         }
         
         .social-icons {
@@ -54,34 +63,160 @@
         
         .social-icons a {
             margin: 0 10px;
-            color: #007bff;
+            color: #8b0000;
+            /* Darker red */
             text-decoration: none;
             font-size: 24px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: #ff0000;
+            /* Bright red */
+        }
+        
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 
 <body>
+    <div id="particles-js"></div>
     <div class="container">
         <h1>pyroplug</h1>
         <p>(useful guides and other links)</p>
         <hr>
         <h2>Console Guides</h2>
-        <a href="https://switch.hacks.guide/" class="link">Switch Guide</a>
-        <a href="https://3ds.hacks.guide/" class="link">3DS Guide</a>
-        <a href="https://wiiu.hacks.guide/" class="link">Wii U Guide</a>
-        <a href="https://dsi.cfw.guide/" class="link">DSI Guide</a>
+        <a href="https://switch.hacks.guide/" class="link" target="_blank">Switch Guide</a>
+        <a href="https://3ds.hacks.guide/" class="link" target="_blank">3DS Guide</a>
+        <a href="https://wiiu.hacks.guide/" class="link" target="_blank">Wii U Guide</a>
+        <a href="https://dsi.cfw.guide/" class="link" target="_blank">DSI Guide</a>
         <hr>
         <h2>Emulator Guides</h2>
-        <a href="https://cemu.cfw.guide/" class="link">CEMU Guide</a>
-        <a href="https://yuzu-mirror.github.io/help/quickstart/" class="link">Yuzu Guide</a>
-        <a href="https://citra-emulator.com/download" class="link">Citra Guide</a>
-        <a href="https://melonds.kuribo64.net/faq.php" class="link">MelonDS Guide</a>
+        <a href="https://cemu.cfw.guide/" class="link" target="_blank">CEMU Guide</a>
+        <a href="https://yuzu-mirror.github.io/help/quickstart/" class="link" target="_blank">Yuzu Guide</a>
+        <a href="https://citra-emulator.com/download" class="link" target="_blank">Citra Guide</a>
+        <a href="https://melonds.kuribo64.net/faq.php" class="link" target="_blank">MelonDS Guide</a>
+        <hr>
         <div class="social-icons">
-            <a href="https://youtube.com/@pyromania324"><i class="fab fa-youtube"></i></a>
-            <a href="https://github.com/pyromania324"><i class="fab fa-github"></i></a>
+            <a href="https://youtube.com/@pyromania324" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://github.com/pyromania324" target="_blank"><i class="fab fa-github"></i></a>
         </div>
     </div>
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 150,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: ["#ff0000", "#ff4500", "#ff8c00", "#ffffff"]
+                },
+                shape: {
+                    type: ["circle", "triangle"],
+                    stroke: {
+                        width: 0,
+                        color: "#000000"
+                    },
+                    polygon: {
+                        nb_sides: 5
+                    }
+                },
+                opacity: {
+                    value: 0.5,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 5,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 40,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: false,
+                    distance: 500,
+                    color: "#ffffff",
+                    opacity: 0.4,
+                    width: 2
+                },
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: "top",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: false,
+                        mode: "repulse"
+                    },
+                    onclick: {
+                        enable: false,
+                        mode: "push"
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 400,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    bubble: {
+                        distance: 400,
+                        size: 40,
+                        duration: 2,
+                        opacity: 8,
+                        speed: 3
+                    },
+                    repulse: {
+                        distance: 200,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    },
+                    remove: {
+                        particles_nb: 2
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
 </body>
 
 </html>
